@@ -1,0 +1,2774 @@
+[
+    {
+        "id": "synthea:PATIENTS|omop:PERSON",
+        "gold_mapping": [
+            [
+                "gender",
+                "gender_concept_id"
+            ],
+            [
+                "gender",
+                "gender_source_value"
+            ],
+            [
+                "birthdate",
+                "year_of_birth"
+            ],
+            [
+                "birthdate",
+                "month_of_birth"
+            ],
+            [
+                "birthdate",
+                "day_of_birth"
+            ],
+            [
+                "birthdate",
+                "birth_datetime"
+            ],
+            [
+                "deathdate",
+                "death_datetime"
+            ],
+            [
+                "race",
+                "race_concept_id"
+            ],
+            [
+                "race",
+                "ethnicity_concept_id"
+            ],
+            [
+                "race",
+                "race_source_value"
+            ],
+            [
+                "ethnicity",
+                "ethnicity_concept_id"
+            ],
+            [
+                "ethnicity",
+                "ethnicity_source_value"
+            ],
+            [
+                "id",
+                "person_source_value"
+            ]
+        ],
+        "source_schema": {
+            "name": "PATIENTS",
+            "description": "Patient demographic data.",
+            "columns": [
+                {
+                    "name": "id",
+                    "type": "uuid",
+                    "column_description": "Primary Key. Unique Identifier of the patient.",
+                    "is_pk": "Yes"
+                },
+                {
+                    "name": "birthdate",
+                    "type": "date (yyyy-mm-dd)",
+                    "column_description": "The date the patient was born.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "deathdate",
+                    "type": "date (yyyy-mm-dd)",
+                    "column_description": "The date the patient died.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "ssn",
+                    "type": "string",
+                    "column_description": "Patient Social Security identifier.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "drivers",
+                    "type": "string",
+                    "column_description": "Patient Drivers License identifier.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "passport",
+                    "type": "string",
+                    "column_description": "Patient Passport identifier.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "prefix",
+                    "type": "string",
+                    "column_description": "Name prefix, such as Mr., Mrs., Dr., etc.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "first",
+                    "type": "string",
+                    "column_description": "First name of the patient.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "middle",
+                    "type": "string",
+                    "column_description": "Middle name of the patient.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "last",
+                    "type": "string",
+                    "column_description": "Last or surname of the patient.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "suffix",
+                    "type": "string",
+                    "column_description": "Name suffix, such as PhD, MD, JD, etc.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "maiden",
+                    "type": "string",
+                    "column_description": "Maiden name of the patient.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "marital",
+                    "type": "string",
+                    "column_description": "Marital Status. M is married, S is single. Currently no support for divorce (D) or widowing (W)",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "race",
+                    "type": "string",
+                    "column_description": "Description of the patient's primary race.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "ethnicity",
+                    "type": "string",
+                    "column_description": "Description of the patient's primary ethnicity.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "gender",
+                    "type": "string",
+                    "column_description": "Gender. M is male, F is female.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "birthplace",
+                    "type": "string",
+                    "column_description": "Name of the town where the patient was born.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "address",
+                    "type": "string",
+                    "column_description": "Patient's street address without commas or newlines.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "city",
+                    "type": "string",
+                    "column_description": "Patient's address city.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "state",
+                    "type": "string",
+                    "column_description": "Patient's address state.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "county",
+                    "type": "string",
+                    "column_description": "Patient's address county.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "fips county code",
+                    "type": "string",
+                    "column_description": "Patient's FIPS county code.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "zip",
+                    "type": "string",
+                    "column_description": "Patient's zip code.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "lat",
+                    "type": "numeric",
+                    "column_description": "Latitude of Patient's address.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "lon",
+                    "type": "numeric",
+                    "column_description": "Longitude of Patient's address.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "healthcare_expenses",
+                    "type": "numeric",
+                    "column_description": "The total lifetime cost of healthcare to the patient (i.e. what the patient paid).",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "healthcare_coverage",
+                    "type": "numeric",
+                    "column_description": "The total lifetime cost of healthcare services that were covered by Payers (i.e. what the insurance company paid).",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "income",
+                    "type": "numeric",
+                    "column_description": "Annual income for the Patient",
+                    "is_pk": "No"
+                }
+            ]
+        },
+        "target_schema": {
+            "name": "PERSON",
+            "description": "This table serves as the central identity management for all Persons in the database. It contains records that uniquely identify each person or patient, and some demographic information.",
+            "columns": [
+                {
+                    "name": "person_id",
+                    "type": "bigint",
+                    "column_description": "It is assumed that every person with a different unique identifier is in fact a different person and should be treated independently.",
+                    "is_pk": "YES"
+                },
+                {
+                    "name": "gender_concept_id",
+                    "type": "integer",
+                    "column_description": "This field is meant to capture the biological sex at birth of the Person. This field should not be used to study gender identity issues.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "year_of_birth",
+                    "type": "integer",
+                    "column_description": "Compute age using year_of_birth.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "month_of_birth",
+                    "type": "integer",
+                    "column_description": "",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "day_of_birth",
+                    "type": "integer",
+                    "column_description": "",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "birth_datetime",
+                    "type": "datetime",
+                    "column_description": "",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "death_datetime",
+                    "type": "datetime",
+                    "column_description": "This field is the death date to be used in analysis, as determined by the ETL logic. Any additional information about a Person\u2019s death is stored in the\u00a0OBSERVATION\u00a0table with the concept_id\u00a04306655\u00a0or in the CONDITION_OCCURRENCE .",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "race_concept_id",
+                    "type": "integer",
+                    "column_description": "This field captures race or ethnic background of the person.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "ethnicity_concept_id",
+                    "type": "integer",
+                    "column_description": "This field captures Ethnicity as defined by the Office of Management and Budget (OMB) of the US Government: it distinguishes only between \u201cHispanic\u201d and \u201cNot Hispanic\u201d. Races and ethnic backgrounds are not stored here.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "location_id",
+                    "type": "bigint",
+                    "column_description": "The location refers to the physical address of the person. This field should capture the last known location of the person. Any prior locations are captured in the\u00a0LOCATION_HISTORY\u00a0table.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "provider_id",
+                    "type": "bigint",
+                    "column_description": "The Provider refers to the last known primary care provider (General Practitioner).",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "care_site_id",
+                    "type": "bigint",
+                    "column_description": "The Care Site refers to where the Provider typically provides the primary care.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "person_source_value",
+                    "type": "varchar(50)",
+                    "column_description": "Use this field to link back to persons in the source data. This is typically used for error checking of ETL logic.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "gender_source_value",
+                    "type": "varchar(50)",
+                    "column_description": "This field is used to store the biological sex of the person from the source data. It is not intended for use in standard analytics but for reference only.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "gender_source_concept_id",
+                    "type": "integer",
+                    "column_description": "Due to the small number of options, this tends to be zero.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "race_source_value",
+                    "type": "varchar(50)",
+                    "column_description": "This field is used to store the race of the person from the source data. It is not intended for use in standard analytics but for reference only.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "race_source_concept_id",
+                    "type": "integer",
+                    "column_description": "Due to the small number of options, this tends to be zero.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "ethnicity_source_value",
+                    "type": "varchar(50)",
+                    "column_description": "This field is used to store the ethnicity of the person from the source data. It is not intended for use in standard analytics but for reference only.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "ethnicity_source_concept_id",
+                    "type": "integer",
+                    "column_description": "Due to the small number of options, this tends to be zero.",
+                    "is_pk": "NO"
+                }
+            ]
+        }
+    },
+    {
+        "id": "synthea:ENCOUNTERS|omop:VISIT_OCCURRENCE",
+        "gold_mapping": [
+            [
+                "patient",
+                "person_id"
+            ],
+            [
+                "encounterclass",
+                "visit_concept_id"
+            ],
+            [
+                "encounterclass",
+                "visit_source_value"
+            ],
+            [
+                "start",
+                "visit_start_date"
+            ],
+            [
+                "start",
+                "visit_start_datetime"
+            ],
+            [
+                "stop",
+                "visit_end_date"
+            ],
+            [
+                "stop",
+                "visit_end_datetime"
+            ]
+        ],
+        "source_schema": {
+            "name": "ENCOUNTERS",
+            "description": "Patient encounter data.",
+            "columns": [
+                {
+                    "name": "id",
+                    "type": "uuid",
+                    "column_description": "Primary Key. Unique Identifier of the encounter.",
+                    "is_pk": "Yes"
+                },
+                {
+                    "name": "start",
+                    "type": "iso8601 utc date (yyyy-mm-dd't'hh:mm'z')",
+                    "column_description": "The date and time the encounter started.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "stop",
+                    "type": "iso8601 utc date (yyyy-mm-dd't'hh:mm'z')",
+                    "column_description": "The date and time the encounter concluded.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "patient",
+                    "type": "uuid",
+                    "column_description": "Foreign key to the Patient.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "organization",
+                    "type": "uuid",
+                    "column_description": "Foreign key to the Organization.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "provider",
+                    "type": "uuid",
+                    "column_description": "Foreign key to the Provider.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "payer",
+                    "type": "uuid",
+                    "column_description": "Foreign key to the Payer.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "encounterclass",
+                    "type": "string",
+                    "column_description": "The class of the encounter, such as ambulatory, emergency, inpatient, wellness, or urgentcare",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "code",
+                    "type": "string",
+                    "column_description": "Encounter code from SNOMED-CT",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "description",
+                    "type": "string",
+                    "column_description": "Description of the type of encounter.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "base_encounter_cost",
+                    "type": "numeric",
+                    "column_description": "The base cost of the encounter, not including any line item costs related to medications, immunizations, procedures, or other services.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "total_claim_cost",
+                    "type": "numeric",
+                    "column_description": "The total cost of the encounter, including all line items.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "payer_coverage",
+                    "type": "numeric",
+                    "column_description": "The amount of cost covered by the Payer.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "reasoncode",
+                    "type": "string",
+                    "column_description": "Diagnosis code from SNOMED-CT, only if this encounter targeted a specific condition.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "reasondescription",
+                    "type": "string",
+                    "column_description": "Description of the reason code.",
+                    "is_pk": "No"
+                }
+            ]
+        },
+        "target_schema": {
+            "name": "VISIT_OCCURRENCE",
+            "description": "This table contains Events where Persons engage with the healthcare system for a duration of time. They are often also called \u201cEncounters\u201d. Visits are defined by a configuration of circumstances under which they occur, such as (i) whether the patient comes to a healthcare institution, the other way around, or the interaction is remote, (ii) whether and what kind of trained medical staff is delivering the service during the Visit, and (iii) whether the Visit is transient or for a longer period involving a stay in bed.",
+            "columns": [
+                {
+                    "name": "visit_occurrence_id",
+                    "type": "bigint",
+                    "column_description": "Use this to identify unique interactions between a person and the health care system. This identifier links across the other CDM event tables to associate events with a visit.",
+                    "is_pk": "YES"
+                },
+                {
+                    "name": "person_id",
+                    "type": "bigint",
+                    "column_description": "",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "visit_concept_id",
+                    "type": "integer",
+                    "column_description": "This field contains a concept id representing the kind of visit, like inpatient or outpatient. All concepts in this field should be standard and belong to the Visit domain.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "visit_start_date",
+                    "type": "date",
+                    "column_description": "For inpatient visits, the start date is typically the admission date. For outpatient visits the start date and end date will be the same.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "visit_start_datetime",
+                    "type": "datetime",
+                    "column_description": "",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "visit_end_date",
+                    "type": "date",
+                    "column_description": "For inpatient visits the end date is typically the discharge date.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "visit_end_datetime",
+                    "type": "datetime",
+                    "column_description": "",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "visit_type_concept_id",
+                    "type": "integer",
+                    "column_description": "Use this field to understand the provenance of the visit record, or where the record comes from.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "provider_id",
+                    "type": "bigint",
+                    "column_description": "There will only be one provider per visit record and the ETL document should clearly state how they were chosen (attending, admitting, etc.). If there are multiple providers associated with a visit in the source, this can be reflected in the event tables (CONDITION_OCCURRENCE, PROCEDURE_OCCURRENCE, etc.) or in the VISIT_DETAIL table.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "care_site_id",
+                    "type": "bigint",
+                    "column_description": "This field provides information about the care site where the visit took place.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "visit_source_value",
+                    "type": "varchar(50)",
+                    "column_description": "This field houses the verbatim value from the source data representing the kind of visit that took place (inpatient, outpatient, emergency, etc.)",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "visit_source_concept_id",
+                    "type": "integer",
+                    "column_description": "",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "admitted_from_concept_id",
+                    "type": "integer",
+                    "column_description": "Use this field to determine where the patient was admitted from. This concept is part of the visit domain and can indicate if a patient was admitted to the hospital from a long-term care facility, for example.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "admitted_from_source_value",
+                    "type": "varchar(50)",
+                    "column_description": "",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "discharge_to_concept_id",
+                    "type": "integer",
+                    "column_description": "Use this field to determine where the patient was discharged to after a visit. This concept is part of the visit domain and can indicate if a patient was discharged to home or sent to a long-term care facility, for example.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "discharge_to_source_value",
+                    "type": "varchar(50)",
+                    "column_description": "",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "preceding_visit_occurrence_id",
+                    "type": "bigint",
+                    "column_description": "Use this field to find the visit that occurred for the person prior to the given visit. There could be a few days or a few years in between.",
+                    "is_pk": "NO"
+                }
+            ]
+        }
+    },
+    {
+        "id": "synthea:ENCOUNTERS|omop:OBSERVATION_PERIOD",
+        "gold_mapping": [
+            [
+                "patient",
+                "person_id"
+            ],
+            [
+                "start",
+                "observation_period_start_date"
+            ],
+            [
+                "stop",
+                "observation_period_end_date"
+            ]
+        ],
+        "source_schema": {
+            "name": "ENCOUNTERS",
+            "description": "Patient encounter data.",
+            "columns": [
+                {
+                    "name": "id",
+                    "type": "uuid",
+                    "column_description": "Primary Key. Unique Identifier of the encounter.",
+                    "is_pk": "Yes"
+                },
+                {
+                    "name": "start",
+                    "type": "iso8601 utc date (yyyy-mm-dd't'hh:mm'z')",
+                    "column_description": "The date and time the encounter started.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "stop",
+                    "type": "iso8601 utc date (yyyy-mm-dd't'hh:mm'z')",
+                    "column_description": "The date and time the encounter concluded.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "patient",
+                    "type": "uuid",
+                    "column_description": "Foreign key to the Patient.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "organization",
+                    "type": "uuid",
+                    "column_description": "Foreign key to the Organization.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "provider",
+                    "type": "uuid",
+                    "column_description": "Foreign key to the Provider.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "payer",
+                    "type": "uuid",
+                    "column_description": "Foreign key to the Payer.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "encounterclass",
+                    "type": "string",
+                    "column_description": "The class of the encounter, such as ambulatory, emergency, inpatient, wellness, or urgentcare",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "code",
+                    "type": "string",
+                    "column_description": "Encounter code from SNOMED-CT",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "description",
+                    "type": "string",
+                    "column_description": "Description of the type of encounter.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "base_encounter_cost",
+                    "type": "numeric",
+                    "column_description": "The base cost of the encounter, not including any line item costs related to medications, immunizations, procedures, or other services.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "total_claim_cost",
+                    "type": "numeric",
+                    "column_description": "The total cost of the encounter, including all line items.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "payer_coverage",
+                    "type": "numeric",
+                    "column_description": "The amount of cost covered by the Payer.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "reasoncode",
+                    "type": "string",
+                    "column_description": "Diagnosis code from SNOMED-CT, only if this encounter targeted a specific condition.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "reasondescription",
+                    "type": "string",
+                    "column_description": "Description of the reason code.",
+                    "is_pk": "No"
+                }
+            ]
+        },
+        "target_schema": {
+            "name": "OBSERVATION_PERIOD",
+            "description": "This table contains records which define spans of time during which two conditions are expected to hold: (i) Clinical Events that happened to the Person are recorded in the Event tables, and (ii) absense of records indicate such Events did not occur during this span of time.",
+            "columns": [
+                {
+                    "name": "observation_period_id",
+                    "type": "bigint",
+                    "column_description": "A Person can have multiple discrete Observation Periods which are identified by the Observation_Period_Id.",
+                    "is_pk": "YES"
+                },
+                {
+                    "name": "person_id",
+                    "type": "bigint",
+                    "column_description": "The Person ID of the PERSON record for which the Observation Period is recorded.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "observation_period_start_date",
+                    "type": "date",
+                    "column_description": "Use this date to determine the start date of the Observation Period",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "observation_period_end_date",
+                    "type": "date",
+                    "column_description": "Use this date to determine the end date of the period for which we can assume that all events for a Person are recorded.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "period_type_concept_id",
+                    "type": "integer",
+                    "column_description": "This field can be used to determine the provenance of the Observation Period as in whether the period was determined from an insurance enrollment file, EHR healthcare encounters, or other sources.",
+                    "is_pk": "NO"
+                }
+            ]
+        }
+    },
+    {
+        "id": "synthea:OBSERVATIONS|omop:MEASUREMENT",
+        "gold_mapping": [
+            [
+                "patient",
+                "person_id"
+            ],
+            [
+                "code",
+                "measurement_concept_id"
+            ],
+            [
+                "code",
+                "measurement_source_value"
+            ],
+            [
+                "code",
+                "measurement_source_concept_id"
+            ],
+            [
+                "date",
+                "measurement_date"
+            ],
+            [
+                "date",
+                "measurement_datetime"
+            ],
+            [
+                "value",
+                "value_as_number"
+            ],
+            [
+                "value",
+                "value_source_value"
+            ],
+            [
+                "encounter",
+                "visit_occurrence_id"
+            ],
+            [
+                "units",
+                "unit_source_value"
+            ]
+        ],
+        "source_schema": {
+            "name": "OBSERVATIONS",
+            "description": "Patient observations including vital signs and lab reports.",
+            "columns": [
+                {
+                    "name": "date",
+                    "type": "iso8601 utc date (yyyy-mm-dd't'hh:mm'z')",
+                    "column_description": "The date and time the observation was performed.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "patient",
+                    "type": "uuid",
+                    "column_description": "Foreign key to the Patient.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "encounter",
+                    "type": "uuid",
+                    "column_description": "Foreign key to the Encounter where the observation was performed.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "category",
+                    "type": "string",
+                    "column_description": "Observation category.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "code",
+                    "type": "string",
+                    "column_description": "Observation or Lab code from LOINC",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "description",
+                    "type": "string",
+                    "column_description": "Description of the observation or lab.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "value",
+                    "type": "string",
+                    "column_description": "The recorded value of the observation.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "units",
+                    "type": "string",
+                    "column_description": "The units of measure for the value.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "type",
+                    "type": "string",
+                    "column_description": "The datatype of Value: text or numeric",
+                    "is_pk": "No"
+                }
+            ]
+        },
+        "target_schema": {
+            "name": "MEASUREMENT",
+            "description": "The MEASUREMENT table contains records of Measurements, i.e.\u00a0structured values (numerical or categorical) obtained through systematic and standardized examination or testing of a Person or Person\u2019s sample. The MEASUREMENT table contains both orders and results of such Measurements as laboratory tests, vital signs, quantitative findings from pathology reports, etc. Measurements are stored as attribute value pairs, with the attribute as the Measurement Concept and the value representing the result. The value can be a Concept (stored in VALUE_AS_CONCEPT), or a numerical value (VALUE_AS_NUMBER) with a Unit (UNIT_CONCEPT_ID). The Procedure for obtaining the sample is housed in the PROCEDURE_OCCURRENCE table, though it is unnecessary to create a PROCEDURE_OCCURRENCE record for each measurement if one does not exist in the source data. Measurements differ from Observations in that they require a standardized test or some other activity to generate a quantitative or qualitative result. If there is no result, it is assumed that the lab test was conducted but the result was not captured.",
+            "columns": [
+                {
+                    "name": "measurement_id",
+                    "type": "bigint",
+                    "column_description": "The unique key given to a Measurement record for a Person. Refer to the ETL for how duplicate Measurements during the same Visit were handled.",
+                    "is_pk": "YES"
+                },
+                {
+                    "name": "person_id",
+                    "type": "bigint",
+                    "column_description": "The PERSON_ID of the PERSON for whom the measurement is recorded. This may be a system generated code.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "measurement_concept_id",
+                    "type": "integer",
+                    "column_description": "The MEASUREMENT_CONCEPT_ID field is recommended for primary use in analyses, and must be used for network studies.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "measurement_date",
+                    "type": "date",
+                    "column_description": "Use this date to determine the date of the measurement.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "measurement_datetime",
+                    "type": "datetime",
+                    "column_description": "",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "measurement_time",
+                    "type": "varchar(10)",
+                    "column_description": "",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "measurement_type_concept_id",
+                    "type": "integer",
+                    "column_description": "This field can be used to determine the provenance of the Measurement record, as in whether the measurement was from an EHR system, insurance claim, registry, or other sources.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "operator_concept_id",
+                    "type": "integer",
+                    "column_description": "The meaning of Concept\u00a04172703\u00a0for \u2018=\u2019 is identical to omission of a OPERATOR_CONCEPT_ID value. Since the use of this field is rare, it\u2019s important when devising analyses to not to forget testing for the content of this field for values different from =.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "value_as_number",
+                    "type": "float",
+                    "column_description": "This is the numerical value of the Result of the Measurement, if available. Note that measurements such as blood pressures will be split into their component parts i.e.\u00a0one record for systolic, one record for diastolic.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "value_as_concept_id",
+                    "type": "integer",
+                    "column_description": "If the raw data gives a categorial result for measurements those values are captured and mapped to standard concepts in the \u2018Meas Value\u2019 domain.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "unit_concept_id",
+                    "type": "integer",
+                    "column_description": "There is currently no recommended unit for individual measurements, i.e.\u00a0it is not mandatory to represent Hemoglobin a1C measurements as a percentage. UNIT_SOURCE_VALUES should be mapped to a Standard Concept in the Unit domain that best represents the unit as given in the source data.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "range_low",
+                    "type": "float",
+                    "column_description": "Ranges have the same unit as the VALUE_AS_NUMBER. These ranges are provided by the source and should remain NULL if not given.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "range_high",
+                    "type": "float",
+                    "column_description": "Ranges have the same unit as the VALUE_AS_NUMBER. These ranges are provided by the source and should remain NULL if not given.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "provider_id",
+                    "type": "bigint",
+                    "column_description": "The provider associated with measurement record, e.g.\u00a0the provider who ordered the test or the provider who recorded the result.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "visit_occurrence_id",
+                    "type": "bigint",
+                    "column_description": "The visit during which the Measurement occurred.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "visit_detail_id",
+                    "type": "bigint",
+                    "column_description": "The VISIT_DETAIL record during which the Measurement occurred. For example, if the Person was in the ICU at the time the VISIT_OCCURRENCE record would reflect the overall hospital stay and the VISIT_DETAIL record would reflect the ICU stay during the hospital visit.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "measurement_source_value",
+                    "type": "varchar(50)",
+                    "column_description": "This field houses the verbatim value from the source data representing the Measurement that occurred. For example, this could be an ICD10 or Read code.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "measurement_source_concept_id",
+                    "type": "integer",
+                    "column_description": "This is the concept representing the MEASUREMENT_SOURCE_VALUE and may not necessarily be standard. This field is discouraged from use in analysis because it is not required to contain Standard Concepts that are used across the OHDSI community, and should only be used when Standard Concepts do not adequately represent the source detail for the Measurement necessary for a given analytic use case. Consider using MEASUREMENT_CONCEPT_ID instead to enable standardized analytics that can be consistent across the network.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "unit_source_value",
+                    "type": "varchar(50)",
+                    "column_description": "This field houses the verbatim value from the source data representing the unit of the Measurement that occurred.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "value_source_value",
+                    "type": "varchar(50)",
+                    "column_description": "This field houses the verbatim result value of the Measurement from the source data .",
+                    "is_pk": "NO"
+                }
+            ]
+        }
+    },
+    {
+        "id": "synthea:PROCEDURES|omop:MEASUREMENT",
+        "gold_mapping": [
+            [
+                "patient",
+                "person_id"
+            ],
+            [
+                "code",
+                "measurement_concept_id"
+            ],
+            [
+                "code",
+                "measurement_source_value"
+            ],
+            [
+                "code",
+                "measurement_source_concept_id"
+            ],
+            [
+                "date",
+                "measurement_date"
+            ],
+            [
+                "date",
+                "measurement_datetime"
+            ],
+            [
+                "date",
+                "measurement_time"
+            ],
+            [
+                "encounter",
+                "visit_occurrence_id"
+            ]
+        ],
+        "source_schema": {
+            "name": "PROCEDURES",
+            "description": "Patient procedure data including surgeries.",
+            "columns": [
+                {
+                    "name": "date",
+                    "type": "iso8601 utc date (yyyy-mm-dd't'hh:mm'z')",
+                    "column_description": "The date and time the procedure was performed.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "stop",
+                    "type": "iso8601 utc date (yyyy-mm-dd't'hh:mm'z')",
+                    "column_description": "The date and time the procedure was completed, if applicable.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "patient",
+                    "type": "uuid",
+                    "column_description": "Foreign key to the Patient.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "encounter",
+                    "type": "uuid",
+                    "column_description": "Foreign key to the Encounter where the procedure was performed.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "code",
+                    "type": "string",
+                    "column_description": "Procedure code from SNOMED-CT",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "description",
+                    "type": "string",
+                    "column_description": "Description of the procedure.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "base_cost",
+                    "type": "numeric",
+                    "column_description": "The line item cost of the procedure.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "reasoncode",
+                    "type": "string",
+                    "column_description": "Diagnosis code from SNOMED-CT specifying why this procedure was performed.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "reasondescription",
+                    "type": "string",
+                    "column_description": "Description of the reason code.",
+                    "is_pk": "No"
+                }
+            ]
+        },
+        "target_schema": {
+            "name": "MEASUREMENT",
+            "description": "The MEASUREMENT table contains records of Measurements, i.e.\u00a0structured values (numerical or categorical) obtained through systematic and standardized examination or testing of a Person or Person\u2019s sample. The MEASUREMENT table contains both orders and results of such Measurements as laboratory tests, vital signs, quantitative findings from pathology reports, etc. Measurements are stored as attribute value pairs, with the attribute as the Measurement Concept and the value representing the result. The value can be a Concept (stored in VALUE_AS_CONCEPT), or a numerical value (VALUE_AS_NUMBER) with a Unit (UNIT_CONCEPT_ID). The Procedure for obtaining the sample is housed in the PROCEDURE_OCCURRENCE table, though it is unnecessary to create a PROCEDURE_OCCURRENCE record for each measurement if one does not exist in the source data. Measurements differ from Observations in that they require a standardized test or some other activity to generate a quantitative or qualitative result. If there is no result, it is assumed that the lab test was conducted but the result was not captured.",
+            "columns": [
+                {
+                    "name": "measurement_id",
+                    "type": "bigint",
+                    "column_description": "The unique key given to a Measurement record for a Person. Refer to the ETL for how duplicate Measurements during the same Visit were handled.",
+                    "is_pk": "YES"
+                },
+                {
+                    "name": "person_id",
+                    "type": "bigint",
+                    "column_description": "The PERSON_ID of the PERSON for whom the measurement is recorded. This may be a system generated code.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "measurement_concept_id",
+                    "type": "integer",
+                    "column_description": "The MEASUREMENT_CONCEPT_ID field is recommended for primary use in analyses, and must be used for network studies.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "measurement_date",
+                    "type": "date",
+                    "column_description": "Use this date to determine the date of the measurement.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "measurement_datetime",
+                    "type": "datetime",
+                    "column_description": "",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "measurement_time",
+                    "type": "varchar(10)",
+                    "column_description": "",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "measurement_type_concept_id",
+                    "type": "integer",
+                    "column_description": "This field can be used to determine the provenance of the Measurement record, as in whether the measurement was from an EHR system, insurance claim, registry, or other sources.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "operator_concept_id",
+                    "type": "integer",
+                    "column_description": "The meaning of Concept\u00a04172703\u00a0for \u2018=\u2019 is identical to omission of a OPERATOR_CONCEPT_ID value. Since the use of this field is rare, it\u2019s important when devising analyses to not to forget testing for the content of this field for values different from =.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "value_as_number",
+                    "type": "float",
+                    "column_description": "This is the numerical value of the Result of the Measurement, if available. Note that measurements such as blood pressures will be split into their component parts i.e.\u00a0one record for systolic, one record for diastolic.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "value_as_concept_id",
+                    "type": "integer",
+                    "column_description": "If the raw data gives a categorial result for measurements those values are captured and mapped to standard concepts in the \u2018Meas Value\u2019 domain.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "unit_concept_id",
+                    "type": "integer",
+                    "column_description": "There is currently no recommended unit for individual measurements, i.e.\u00a0it is not mandatory to represent Hemoglobin a1C measurements as a percentage. UNIT_SOURCE_VALUES should be mapped to a Standard Concept in the Unit domain that best represents the unit as given in the source data.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "range_low",
+                    "type": "float",
+                    "column_description": "Ranges have the same unit as the VALUE_AS_NUMBER. These ranges are provided by the source and should remain NULL if not given.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "range_high",
+                    "type": "float",
+                    "column_description": "Ranges have the same unit as the VALUE_AS_NUMBER. These ranges are provided by the source and should remain NULL if not given.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "provider_id",
+                    "type": "bigint",
+                    "column_description": "The provider associated with measurement record, e.g.\u00a0the provider who ordered the test or the provider who recorded the result.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "visit_occurrence_id",
+                    "type": "bigint",
+                    "column_description": "The visit during which the Measurement occurred.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "visit_detail_id",
+                    "type": "bigint",
+                    "column_description": "The VISIT_DETAIL record during which the Measurement occurred. For example, if the Person was in the ICU at the time the VISIT_OCCURRENCE record would reflect the overall hospital stay and the VISIT_DETAIL record would reflect the ICU stay during the hospital visit.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "measurement_source_value",
+                    "type": "varchar(50)",
+                    "column_description": "This field houses the verbatim value from the source data representing the Measurement that occurred. For example, this could be an ICD10 or Read code.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "measurement_source_concept_id",
+                    "type": "integer",
+                    "column_description": "This is the concept representing the MEASUREMENT_SOURCE_VALUE and may not necessarily be standard. This field is discouraged from use in analysis because it is not required to contain Standard Concepts that are used across the OHDSI community, and should only be used when Standard Concepts do not adequately represent the source detail for the Measurement necessary for a given analytic use case. Consider using MEASUREMENT_CONCEPT_ID instead to enable standardized analytics that can be consistent across the network.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "unit_source_value",
+                    "type": "varchar(50)",
+                    "column_description": "This field houses the verbatim value from the source data representing the unit of the Measurement that occurred.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "value_source_value",
+                    "type": "varchar(50)",
+                    "column_description": "This field houses the verbatim result value of the Measurement from the source data .",
+                    "is_pk": "NO"
+                }
+            ]
+        }
+    },
+    {
+        "id": "synthea:PROCEDURES|omop:PROCEDURE_OCCURRENCE",
+        "gold_mapping": [
+            [
+                "patient",
+                "person_id"
+            ],
+            [
+                "code",
+                "procedure_concept_id"
+            ],
+            [
+                "code",
+                "procedure_source_value"
+            ],
+            [
+                "code",
+                "procedure_source_concept_id"
+            ],
+            [
+                "date",
+                "procedure_date"
+            ],
+            [
+                "date",
+                "procedure_datetime"
+            ],
+            [
+                "encounter",
+                "visit_occurrence_id"
+            ]
+        ],
+        "source_schema": {
+            "name": "PROCEDURES",
+            "description": "Patient procedure data including surgeries.",
+            "columns": [
+                {
+                    "name": "date",
+                    "type": "iso8601 utc date (yyyy-mm-dd't'hh:mm'z')",
+                    "column_description": "The date and time the procedure was performed.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "stop",
+                    "type": "iso8601 utc date (yyyy-mm-dd't'hh:mm'z')",
+                    "column_description": "The date and time the procedure was completed, if applicable.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "patient",
+                    "type": "uuid",
+                    "column_description": "Foreign key to the Patient.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "encounter",
+                    "type": "uuid",
+                    "column_description": "Foreign key to the Encounter where the procedure was performed.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "code",
+                    "type": "string",
+                    "column_description": "Procedure code from SNOMED-CT",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "description",
+                    "type": "string",
+                    "column_description": "Description of the procedure.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "base_cost",
+                    "type": "numeric",
+                    "column_description": "The line item cost of the procedure.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "reasoncode",
+                    "type": "string",
+                    "column_description": "Diagnosis code from SNOMED-CT specifying why this procedure was performed.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "reasondescription",
+                    "type": "string",
+                    "column_description": "Description of the reason code.",
+                    "is_pk": "No"
+                }
+            ]
+        },
+        "target_schema": {
+            "name": "PROCEDURE_OCCURRENCE",
+            "description": "This table contains records of activities or processes ordered by, or carried out by, a healthcare provider on the patient with a diagnostic or therapeutic purpose.",
+            "columns": [
+                {
+                    "name": "person_id",
+                    "type": "bigint",
+                    "column_description": "The PERSON_ID of the PERSON for whom the procedure is recorded. This may be a system generated code.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "procedure_concept_id",
+                    "type": "integer",
+                    "column_description": "The PROCEDURE_CONCEPT_ID field is recommended for primary use in analyses, and must be used for network studies. This is the standard concept mapped from the source value which represents a procedure",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "procedure_date",
+                    "type": "date",
+                    "column_description": "Use this date to determine the date the procedure occurred.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "procedure_datetime",
+                    "type": "datetime",
+                    "column_description": "",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "procedure_type_concept_id",
+                    "type": "integer",
+                    "column_description": "This field can be used to determine the provenance of the Procedure record, as in whether the procedure was from an EHR system, insurance claim, registry, or other sources.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "modifier_concept_id",
+                    "type": "integer",
+                    "column_description": "The modifiers are intended to give additional information about the procedure but as of now the vocabulary is under review.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "quantity",
+                    "type": "integer",
+                    "column_description": "If the quantity value is omitted, a single procedure is assumed.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "provider_id",
+                    "type": "bigint",
+                    "column_description": "The provider associated with the procedure record, e.g.\u00a0the provider who performed the Procedure.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "visit_occurrence_id",
+                    "type": "bigint",
+                    "column_description": "The visit during which the procedure occurred.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "visit_detail_id",
+                    "type": "bigint",
+                    "column_description": "The VISIT_DETAIL record during which the Procedure occurred. For example, if the Person was in the ICU at the time of the Procedure the VISIT_OCCURRENCE record would reflect the overall hospital stay and the VISIT_DETAIL record would reflect the ICU stay during the hospital visit.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "procedure_source_value",
+                    "type": "varchar(50)",
+                    "column_description": "This field houses the verbatim value from the source data representing the procedure that occurred. For example, this could be an CPT4 or OPCS4 code.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "procedure_source_concept_id",
+                    "type": "integer",
+                    "column_description": "This is the concept representing the procedure source value and may not necessarily be standard. This field is discouraged from use in analysis because it is not required to contain Standard Concepts that are used across the OHDSI community, and should only be used when Standard Concepts do not adequately represent the source detail for the Procedure necessary for a given analytic use case. Consider using PROCEDURE_CONCEPT_ID instead to enable standardized analytics that can be consistent across the network.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "modifier_source_value",
+                    "type": "varchar(50)",
+                    "column_description": "",
+                    "is_pk": "NO"
+                }
+            ]
+        }
+    },
+    {
+        "id": "synthea:CONDITIONS|omop:CONDITION_OCCURRENCE",
+        "gold_mapping": [
+            [
+                "patient",
+                "person_id"
+            ],
+            [
+                "code",
+                "condition_concept_id"
+            ],
+            [
+                "code",
+                "condition_source_value"
+            ],
+            [
+                "code",
+                "condition_source_concept_id"
+            ],
+            [
+                "start",
+                "condition_start_date"
+            ],
+            [
+                "start",
+                "condition_start_datetime"
+            ],
+            [
+                "stop",
+                "condition_end_date"
+            ],
+            [
+                "stop",
+                "condition_end_datetime"
+            ],
+            [
+                "encounter",
+                "visit_occurrence_id"
+            ]
+        ],
+        "source_schema": {
+            "name": "CONDITIONS",
+            "description": "Patient conditions or diagnoses.",
+            "columns": [
+                {
+                    "name": "start",
+                    "type": "date (yyyy-mm-dd)",
+                    "column_description": "The date the condition was diagnosed.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "stop",
+                    "type": "date (yyyy-mm-dd)",
+                    "column_description": "The date the condition resolved, if applicable.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "patient",
+                    "type": "uuid",
+                    "column_description": "Foreign key to the Patient.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "encounter",
+                    "type": "uuid",
+                    "column_description": "Foreign key to the Encounter when the condition was diagnosed.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "code",
+                    "type": "string",
+                    "column_description": "Diagnosis code from SNOMED-CT",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "description",
+                    "type": "string",
+                    "column_description": "Description of the condition.",
+                    "is_pk": "No"
+                }
+            ]
+        },
+        "target_schema": {
+            "name": "CONDITION_OCCURRENCE",
+            "description": "This table contains records of Events of a Person suggesting the presence of a disease or medical condition stated as a diagnosis, a sign, or a symptom, which is either observed by a Provider or reported by the patient.",
+            "columns": [
+                {
+                    "name": "condition_occurrence_id",
+                    "type": "bigint",
+                    "column_description": "The unique key given to a condition record for a person. Refer to the ETL for how duplicate conditions during the same visit were handled.",
+                    "is_pk": "YES"
+                },
+                {
+                    "name": "person_id",
+                    "type": "bigint",
+                    "column_description": "The PERSON_ID of the PERSON for whom the condition is recorded.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "condition_concept_id",
+                    "type": "integer",
+                    "column_description": "The CONDITION_CONCEPT_ID field is recommended for primary use in analyses, and must be used for network studies. This is the standard concept mapped from the source value which represents a condition",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "condition_start_date",
+                    "type": "date",
+                    "column_description": "Use this date to determine the start date of the condition",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "condition_start_datetime",
+                    "type": "datetime",
+                    "column_description": "",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "condition_end_date",
+                    "type": "date",
+                    "column_description": "Use this date to determine the end date of the condition",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "condition_end_datetime",
+                    "type": "datetime",
+                    "column_description": "",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "condition_type_concept_id",
+                    "type": "integer",
+                    "column_description": "This field can be used to determine the provenance of the Condition record, as in whether the condition was from an EHR system, insurance claim, registry, or other sources.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "condition_status_concept_id",
+                    "type": "integer",
+                    "column_description": "This concept represents the point during the visit the diagnosis was given (admitting diagnosis, final diagnosis), whether the diagnosis was determined due to laboratory findings, if the diagnosis was exclusionary, or if it was a preliminary diagnosis, among others.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "stop_reason",
+                    "type": "varchar(20)",
+                    "column_description": "The Stop Reason indicates why a Condition is no longer valid with respect to the purpose within the source data. Note that a Stop Reason does not necessarily imply that the condition is no longer occurring.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "provider_id",
+                    "type": "bigint",
+                    "column_description": "The provider associated with condition record, e.g.\u00a0the provider who made the diagnosis or the provider who recorded the symptom.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "visit_occurrence_id",
+                    "type": "bigint",
+                    "column_description": "The visit during which the condition occurred.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "visit_detail_id",
+                    "type": "bigint",
+                    "column_description": "The VISIT_DETAIL record during which the condition occurred. For example, if the person was in the ICU at the time of the diagnosis the VISIT_OCCURRENCE record would reflect the overall hospital stay and the VISIT_DETAIL record would reflect the ICU stay during the hospital visit.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "condition_source_value",
+                    "type": "varchar(50)",
+                    "column_description": "This field houses the verbatim value from the source data representing the condition that occurred. For example, this could be an ICD10 or Read code.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "condition_source_concept_id",
+                    "type": "integer",
+                    "column_description": "This is the concept representing the condition source value and may not necessarily be standard. This field is discouraged from use in analysis because it is not required to contain Standard Concepts that are used across the OHDSI community, and should only be used when Standard Concepts do not adequately represent the source detail for the Condition necessary for a given analytic use case. Consider using CONDITION_CONCEPT_ID instead to enable standardized analytics that can be consistent across the network.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "condition_status_source_value",
+                    "type": "varchar(50)",
+                    "column_description": "This field houses the verbatim value from the source data representing the condition status.",
+                    "is_pk": "NO"
+                }
+            ]
+        }
+    },
+    {
+        "id": "synthea:CONDITIONS|omop:OBSERVATION",
+        "gold_mapping": [
+            [
+                "patient",
+                "person_id"
+            ],
+            [
+                "code",
+                "observation_concept_id"
+            ],
+            [
+                "code",
+                "observation_source_value"
+            ],
+            [
+                "code",
+                "observation_source_concept_id"
+            ],
+            [
+                "start",
+                "observation_date"
+            ],
+            [
+                "start",
+                "observation_datetime"
+            ],
+            [
+                "encounter",
+                "visit_occurrence_id"
+            ]
+        ],
+        "source_schema": {
+            "name": "CONDITIONS",
+            "description": "Patient conditions or diagnoses.",
+            "columns": [
+                {
+                    "name": "start",
+                    "type": "date (yyyy-mm-dd)",
+                    "column_description": "The date the condition was diagnosed.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "stop",
+                    "type": "date (yyyy-mm-dd)",
+                    "column_description": "The date the condition resolved, if applicable.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "patient",
+                    "type": "uuid",
+                    "column_description": "Foreign key to the Patient.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "encounter",
+                    "type": "uuid",
+                    "column_description": "Foreign key to the Encounter when the condition was diagnosed.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "code",
+                    "type": "string",
+                    "column_description": "Diagnosis code from SNOMED-CT",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "description",
+                    "type": "string",
+                    "column_description": "Description of the condition.",
+                    "is_pk": "No"
+                }
+            ]
+        },
+        "target_schema": {
+            "name": "OBSERVATION",
+            "description": "The OBSERVATION table captures clinical facts about a Person obtained in the context of examination, questioning or a procedure. Any data that cannot be represented by any other domains, such as social and lifestyle facts, medical history, family history, etc. are recorded here.\u00a0New to CDM v6.0\u00a0An Observation can now be linked to other records in the CDM instance using the fields OBSERVATION_EVENT_ID and OBS_EVENT_FIELD_CONCEPT_ID. To link another record to an Observation, the primary key goes in OBSERVATION_EVENT_ID (CONDITION_OCCURRENCE_ID, DRUG_EXPOSURE_ID, etc.) and the Concept representing the field where the OBSERVATION_EVENT_ID was taken from go in the OBS_EVENT_FIELD_CONCEPT_ID. For example, a CONDITION_OCCURRENCE of Asthma might be linked to an Observation of a family history of Asthma. In this case the CONDITION_OCCURRENCE_ID of the Asthma record would go in OBSERVATION_EVENT_ID of the family history record and the CONCEPT_ID\u00a01147127\u00a0would go in OBS_EVENT_FIELD_CONCEPT_ID to denote that the OBSERVATION_EVENT_ID represents a CONDITION_OCCURRENCE_ID.",
+            "columns": [
+                {
+                    "name": "observation_id",
+                    "type": "bigint",
+                    "column_description": "The unique key given to an Observation record for a Person. Refer to the ETL for how duplicate Observations during the same Visit were handled.",
+                    "is_pk": "YES"
+                },
+                {
+                    "name": "person_id",
+                    "type": "bigint",
+                    "column_description": "The PERSON_ID of the Person for whom the Observation is recorded. This may be a system generated code.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "observation_concept_id",
+                    "type": "integer",
+                    "column_description": "The OBSERVATION_CONCEPT_ID field is recommended for primary use in analyses, and must be used for network studies.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "observation_date",
+                    "type": "date",
+                    "column_description": "The date of the Observation. Depending on what the Observation represents this could be the date of a lab test, the date of a survey, or the date a patient\u2019s family history was taken.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "observation_datetime",
+                    "type": "datetime",
+                    "column_description": "",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "observation_type_concept_id",
+                    "type": "integer",
+                    "column_description": "This field can be used to determine the provenance of the Observation record, as in whether the measurement was from an EHR system, insurance claim, registry, or other sources.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "value_as_number",
+                    "type": "float",
+                    "column_description": "This is the numerical value of the Result of the Observation, if applicable and available. It is not expected that all Observations will have numeric results, rather, this field is here to house values should they exist.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "value_as_string",
+                    "type": "varchar(60)",
+                    "column_description": "This is the categorical value of the Result of the Observation, if applicable and available.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "value_as_concept_id",
+                    "type": "integer",
+                    "column_description": "It is possible that some records destined for the Observation table have two clinical ideas represented in one source code. This is common with ICD10 codes that describe a family history of some Condition, for example. In OMOP the Vocabulary breaks these two clinical ideas into two codes; one becomes the OBSERVATION_CONCEPT_ID and the other becomes the VALUE_AS_CONCEPT_ID. It is important when using the Observation table to keep this possibility in mind and to examine the VALUE_AS_CONCEPT_ID field for relevant information.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "qualifier_concept_id",
+                    "type": "integer",
+                    "column_description": "This field contains all attributes specifying the clinical fact further, such as as degrees, severities, drug-drug interaction alerts etc.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "unit_concept_id",
+                    "type": "integer",
+                    "column_description": "There is currently no recommended unit for individual observation concepts. UNIT_SOURCE_VALUES should be mapped to a Standard Concept in the Unit domain that best represents the unit as given in the source data.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "provider_id",
+                    "type": "bigint",
+                    "column_description": "The provider associated with the observation record, e.g.\u00a0the provider who ordered the test or the provider who recorded the result.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "visit_occurrence_id",
+                    "type": "bigint",
+                    "column_description": "The visit during which the Observation occurred.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "visit_detail_id",
+                    "type": "bigint",
+                    "column_description": "The VISIT_DETAIL record during which the Observation occurred. For example, if the Person was in the ICU at the time the VISIT_OCCURRENCE record would reflect the overall hospital stay and the VISIT_DETAIL record would reflect the ICU stay during the hospital visit.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "observation_source_value",
+                    "type": "varchar(50)",
+                    "column_description": "This field houses the verbatim value from the source data representing the Observation that occurred. For example, this could be an ICD10 or Read code.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "observation_source_concept_id",
+                    "type": "integer",
+                    "column_description": "This is the concept representing the OBSERVATION_SOURCE_VALUE and may not necessarily be standard. This field is discouraged from use in analysis because it is not required to contain Standard Concepts that are used across the OHDSI community, and should only be used when Standard Concepts do not adequately represent the source detail for the Observation necessary for a given analytic use case. Consider using OBSERVATION_CONCEPT_ID instead to enable standardized analytics that can be consistent across the network.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "unit_source_value",
+                    "type": "varchar(50)",
+                    "column_description": "This field houses the verbatim value from the source data representing the unit of the Observation that occurred.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "qualifier_source_value",
+                    "type": "varchar(50)",
+                    "column_description": "This field houses the verbatim value from the source data representing the qualifier of the Observation that occurred.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "observation_event_id",
+                    "type": "bigint",
+                    "column_description": "If the Observation record is related to another record in the database, this field is the primary key of the linked record.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "obs_event_field_concept_id",
+                    "type": "integer",
+                    "column_description": "If the Observation record is related to another record in the database, this field is the CONCEPT_ID that identifies which table the primary key of the linked record came from.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "value_as_datetime",
+                    "type": "datetime",
+                    "column_description": "It is possible that some Observation records might store a result as a date value.",
+                    "is_pk": "NO"
+                }
+            ]
+        }
+    },
+    {
+        "id": "synthea:CONDITIONS|omop:DRUG_EXPOSURE",
+        "gold_mapping": [
+            [
+                "patient",
+                "person_id"
+            ],
+            [
+                "code",
+                "drug_concept_id"
+            ],
+            [
+                "code",
+                "drug_source_value"
+            ],
+            [
+                "code",
+                "drug_source_concept_id"
+            ],
+            [
+                "start",
+                "drug_exposure_start_date"
+            ],
+            [
+                "start",
+                "drug_exposure_start_datetime"
+            ],
+            [
+                "stop",
+                "drug_exposure_end_date"
+            ],
+            [
+                "stop",
+                "drug_exposure_end_datetime"
+            ],
+            [
+                "stop",
+                "verbatim_end_date"
+            ],
+            [
+                "encounter",
+                "visit_occurrence_id"
+            ]
+        ],
+        "source_schema": {
+            "name": "CONDITIONS",
+            "description": "Patient conditions or diagnoses.",
+            "columns": [
+                {
+                    "name": "start",
+                    "type": "date (yyyy-mm-dd)",
+                    "column_description": "The date the condition was diagnosed.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "stop",
+                    "type": "date (yyyy-mm-dd)",
+                    "column_description": "The date the condition resolved, if applicable.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "patient",
+                    "type": "uuid",
+                    "column_description": "Foreign key to the Patient.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "encounter",
+                    "type": "uuid",
+                    "column_description": "Foreign key to the Encounter when the condition was diagnosed.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "code",
+                    "type": "string",
+                    "column_description": "Diagnosis code from SNOMED-CT",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "description",
+                    "type": "string",
+                    "column_description": "Description of the condition.",
+                    "is_pk": "No"
+                }
+            ]
+        },
+        "target_schema": {
+            "name": "DRUG_EXPOSURE",
+            "description": "This table captures records about the exposure to a Drug ingested or otherwise introduced into the body. A Drug is a biochemical substance formulated in such a way that when administered to a Person it will exert a certain biochemical effect on the metabolism. Drugs include prescription and over-the-counter medicines, vaccines, and large-molecule biologic therapies. Radiological devices ingested or applied locally do not count as Drugs.",
+            "columns": [
+                {
+                    "name": "drug_exposure_id",
+                    "type": "bigint",
+                    "column_description": "The unique key given to records of drug dispensings or administrations for a person. Refer to the ETL for how duplicate drugs during the same visit were handled.",
+                    "is_pk": "YES"
+                },
+                {
+                    "name": "person_id",
+                    "type": "bigint",
+                    "column_description": "The PERSON_ID of the PERSON for whom the drug dispensing or administration is recorded. This may be a system generated code.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "drug_concept_id",
+                    "type": "integer",
+                    "column_description": "The DRUG_CONCEPT_ID field is recommended for primary use in analyses, and must be used for network studies. This is the standard concept mapped from the source concept id which represents a drug product or molecule otherwise introduced to the body. The drug concepts can have a varying degree of information about drug strength and dose. This information is relevant in the context of quantity and administration information in the subsequent fields plus strength information from the DRUG_STRENGTH table, provided as part of the standard vocabulary download.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "drug_exposure_start_date",
+                    "type": "date",
+                    "column_description": "Use this date to determine the start date of the drug record.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "drug_exposure_start_datetime",
+                    "type": "datetime",
+                    "column_description": "",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "drug_exposure_end_date",
+                    "type": "date",
+                    "column_description": "The DRUG_EXPOSURE_END_DATE denotes the day the drug exposure ended for the patient.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "drug_exposure_end_datetime",
+                    "type": "datetime",
+                    "column_description": "",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "verbatim_end_date",
+                    "type": "date",
+                    "column_description": "This is the end date of the drug exposure as it appears in the source data, if it is given",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "drug_type_concept_id",
+                    "type": "integer",
+                    "column_description": "You can use the TYPE_CONCEPT_ID to delineate between prescriptions written vs.\u00a0prescriptions dispensed vs.\u00a0medication history vs.\u00a0patient-reported exposure, etc.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "stop_reason",
+                    "type": "varchar(20)",
+                    "column_description": "The reason a person stopped a medication as it is represented in the source. Reasons include regimen completed, changed, removed, etc. This field will be retired in v6.0.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "refills",
+                    "type": "integer",
+                    "column_description": "This is only filled in when the record is coming from a prescription written this field is meant to represent intended refills at time of the prescription.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "quantity",
+                    "type": "float",
+                    "column_description": "",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "days_supply",
+                    "type": "integer",
+                    "column_description": "",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "sig",
+                    "type": "varchar(max)",
+                    "column_description": "This is the verbatim instruction for the drug as written by the provider.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "route_concept_id",
+                    "type": "integer",
+                    "column_description": "",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "lot_number",
+                    "type": "varchar(50)",
+                    "column_description": "",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "provider_id",
+                    "type": "bigint",
+                    "column_description": "The Provider associated with drug record, e.g.\u00a0the provider who wrote the prescription or the provider who administered the drug.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "visit_occurrence_id",
+                    "type": "bigint",
+                    "column_description": "The Visit during which the drug was prescribed, administered or dispensed.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "visit_detail_id",
+                    "type": "bigint",
+                    "column_description": "The VISIT_DETAIL record during which the drug exposure occurred. For example, if the person was in the ICU at the time of the drug administration the VISIT_OCCURRENCE record would reflect the overall hospital stay and the VISIT_DETAIL record would reflect the ICU stay during the hospital visit.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "drug_source_value",
+                    "type": "varchar(50)",
+                    "column_description": "This field houses the verbatim value from the source data representing the drug exposure that occurred. For example, this could be an NDC or Gemscript code.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "drug_source_concept_id",
+                    "type": "integer",
+                    "column_description": "This is the concept representing the drug source value and may not necessarily be standard. This field is discouraged from use in analysis because it is not required to contain Standard Concepts that are used across the OHDSI community, and should only be used when Standard Concepts do not adequately represent the source detail for the Drug necessary for a given analytic use case. Consider using DRUG_CONCEPT_ID instead to enable standardized analytics that can be consistent across the network.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "route_source_value",
+                    "type": "varchar(50)",
+                    "column_description": "This field houses the verbatim value from the source data representing the drug route.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "dose_unit_source_value",
+                    "type": "varchar(50)",
+                    "column_description": "This field houses the verbatim value from the source data representing the dose unit of the drug given.",
+                    "is_pk": "NO"
+                }
+            ]
+        }
+    },
+    {
+        "id": "synthea:ALLERGIES|omop:OBSERVATION",
+        "gold_mapping": [
+            [
+                "patient",
+                "person_id"
+            ],
+            [
+                "code",
+                "observation_concept_id"
+            ],
+            [
+                "code",
+                "observation_source_value"
+            ],
+            [
+                "code",
+                "observation_source_concept_id"
+            ],
+            [
+                "start",
+                "observation_date"
+            ],
+            [
+                "start",
+                "observation_datetime"
+            ],
+            [
+                "encounter",
+                "visit_occurrence_id"
+            ]
+        ],
+        "source_schema": {
+            "name": "ALLERGIES",
+            "description": "Patient allergy data.",
+            "columns": [
+                {
+                    "name": "start",
+                    "type": "date (yyyy-mm-dd)",
+                    "column_description": "The date the allergy was diagnosed.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "stop",
+                    "type": "date (yyyy-mm-dd)",
+                    "column_description": "The date the allergy ended, if applicable.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "patient",
+                    "type": "uuid",
+                    "column_description": "Foreign key to the Patient.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "encounter",
+                    "type": "uuid",
+                    "column_description": "Foreign key to the Encounter when the allergy was diagnosed.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "code",
+                    "type": "string",
+                    "column_description": "Allergy code",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "system",
+                    "type": "string",
+                    "column_description": "Terminology system of the Allergy code. RxNorm if this is a medication allergy, otherwise SNOMED-CT.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "description",
+                    "type": "string",
+                    "column_description": "Description of the Allergy",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "type",
+                    "type": "string",
+                    "column_description": "Identify entry as an allergy or intolerance.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "category",
+                    "type": "string",
+                    "column_description": "Identify the category as drug, medication, food, or environment.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "reaction1",
+                    "type": "string",
+                    "column_description": "Optional SNOMED code of the patients reaction.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "description1",
+                    "type": "string",
+                    "column_description": "Optional description of the Reaction1 SNOMED code.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "severity1",
+                    "type": "string",
+                    "column_description": "Severity of the reaction: MILD, MODERATE, or SEVERE.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "reaction2",
+                    "type": "string",
+                    "column_description": "Optional SNOMED code of the patients second reaction.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "description2",
+                    "type": "string",
+                    "column_description": "Optional description of the Reaction2 SNOMED code.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "severity2",
+                    "type": "string",
+                    "column_description": "Severity of the second reaction: MILD, MODERATE, or SEVERE.",
+                    "is_pk": "No"
+                }
+            ]
+        },
+        "target_schema": {
+            "name": "OBSERVATION",
+            "description": "The OBSERVATION table captures clinical facts about a Person obtained in the context of examination, questioning or a procedure. Any data that cannot be represented by any other domains, such as social and lifestyle facts, medical history, family history, etc. are recorded here.\u00a0New to CDM v6.0\u00a0An Observation can now be linked to other records in the CDM instance using the fields OBSERVATION_EVENT_ID and OBS_EVENT_FIELD_CONCEPT_ID. To link another record to an Observation, the primary key goes in OBSERVATION_EVENT_ID (CONDITION_OCCURRENCE_ID, DRUG_EXPOSURE_ID, etc.) and the Concept representing the field where the OBSERVATION_EVENT_ID was taken from go in the OBS_EVENT_FIELD_CONCEPT_ID. For example, a CONDITION_OCCURRENCE of Asthma might be linked to an Observation of a family history of Asthma. In this case the CONDITION_OCCURRENCE_ID of the Asthma record would go in OBSERVATION_EVENT_ID of the family history record and the CONCEPT_ID\u00a01147127\u00a0would go in OBS_EVENT_FIELD_CONCEPT_ID to denote that the OBSERVATION_EVENT_ID represents a CONDITION_OCCURRENCE_ID.",
+            "columns": [
+                {
+                    "name": "observation_id",
+                    "type": "bigint",
+                    "column_description": "The unique key given to an Observation record for a Person. Refer to the ETL for how duplicate Observations during the same Visit were handled.",
+                    "is_pk": "YES"
+                },
+                {
+                    "name": "person_id",
+                    "type": "bigint",
+                    "column_description": "The PERSON_ID of the Person for whom the Observation is recorded. This may be a system generated code.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "observation_concept_id",
+                    "type": "integer",
+                    "column_description": "The OBSERVATION_CONCEPT_ID field is recommended for primary use in analyses, and must be used for network studies.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "observation_date",
+                    "type": "date",
+                    "column_description": "The date of the Observation. Depending on what the Observation represents this could be the date of a lab test, the date of a survey, or the date a patient\u2019s family history was taken.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "observation_datetime",
+                    "type": "datetime",
+                    "column_description": "",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "observation_type_concept_id",
+                    "type": "integer",
+                    "column_description": "This field can be used to determine the provenance of the Observation record, as in whether the measurement was from an EHR system, insurance claim, registry, or other sources.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "value_as_number",
+                    "type": "float",
+                    "column_description": "This is the numerical value of the Result of the Observation, if applicable and available. It is not expected that all Observations will have numeric results, rather, this field is here to house values should they exist.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "value_as_string",
+                    "type": "varchar(60)",
+                    "column_description": "This is the categorical value of the Result of the Observation, if applicable and available.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "value_as_concept_id",
+                    "type": "integer",
+                    "column_description": "It is possible that some records destined for the Observation table have two clinical ideas represented in one source code. This is common with ICD10 codes that describe a family history of some Condition, for example. In OMOP the Vocabulary breaks these two clinical ideas into two codes; one becomes the OBSERVATION_CONCEPT_ID and the other becomes the VALUE_AS_CONCEPT_ID. It is important when using the Observation table to keep this possibility in mind and to examine the VALUE_AS_CONCEPT_ID field for relevant information.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "qualifier_concept_id",
+                    "type": "integer",
+                    "column_description": "This field contains all attributes specifying the clinical fact further, such as as degrees, severities, drug-drug interaction alerts etc.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "unit_concept_id",
+                    "type": "integer",
+                    "column_description": "There is currently no recommended unit for individual observation concepts. UNIT_SOURCE_VALUES should be mapped to a Standard Concept in the Unit domain that best represents the unit as given in the source data.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "provider_id",
+                    "type": "bigint",
+                    "column_description": "The provider associated with the observation record, e.g.\u00a0the provider who ordered the test or the provider who recorded the result.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "visit_occurrence_id",
+                    "type": "bigint",
+                    "column_description": "The visit during which the Observation occurred.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "visit_detail_id",
+                    "type": "bigint",
+                    "column_description": "The VISIT_DETAIL record during which the Observation occurred. For example, if the Person was in the ICU at the time the VISIT_OCCURRENCE record would reflect the overall hospital stay and the VISIT_DETAIL record would reflect the ICU stay during the hospital visit.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "observation_source_value",
+                    "type": "varchar(50)",
+                    "column_description": "This field houses the verbatim value from the source data representing the Observation that occurred. For example, this could be an ICD10 or Read code.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "observation_source_concept_id",
+                    "type": "integer",
+                    "column_description": "This is the concept representing the OBSERVATION_SOURCE_VALUE and may not necessarily be standard. This field is discouraged from use in analysis because it is not required to contain Standard Concepts that are used across the OHDSI community, and should only be used when Standard Concepts do not adequately represent the source detail for the Observation necessary for a given analytic use case. Consider using OBSERVATION_CONCEPT_ID instead to enable standardized analytics that can be consistent across the network.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "unit_source_value",
+                    "type": "varchar(50)",
+                    "column_description": "This field houses the verbatim value from the source data representing the unit of the Observation that occurred.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "qualifier_source_value",
+                    "type": "varchar(50)",
+                    "column_description": "This field houses the verbatim value from the source data representing the qualifier of the Observation that occurred.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "observation_event_id",
+                    "type": "bigint",
+                    "column_description": "If the Observation record is related to another record in the database, this field is the primary key of the linked record.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "obs_event_field_concept_id",
+                    "type": "integer",
+                    "column_description": "If the Observation record is related to another record in the database, this field is the CONCEPT_ID that identifies which table the primary key of the linked record came from.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "value_as_datetime",
+                    "type": "datetime",
+                    "column_description": "It is possible that some Observation records might store a result as a date value.",
+                    "is_pk": "NO"
+                }
+            ]
+        }
+    },
+    {
+        "id": "synthea:IMMUNIZATIONS|omop:DRUG_EXPOSURE",
+        "gold_mapping": [
+            [
+                "patient",
+                "person_id"
+            ],
+            [
+                "code",
+                "drug_concept_id"
+            ],
+            [
+                "code",
+                "drug_source_value"
+            ],
+            [
+                "code",
+                "drug_source_concept_id"
+            ],
+            [
+                "date",
+                "drug_exposure_start_date"
+            ],
+            [
+                "date",
+                "drug_exposure_start_datetime"
+            ],
+            [
+                "date",
+                "drug_exposure_end_date"
+            ],
+            [
+                "date",
+                "drug_exposure_end_datetime"
+            ],
+            [
+                "date",
+                "verbatim_end_date"
+            ],
+            [
+                "encounter",
+                "visit_occurrence_id"
+            ]
+        ],
+        "source_schema": {
+            "name": "IMMUNIZATIONS",
+            "description": "Patient immunization data.",
+            "columns": [
+                {
+                    "name": "date",
+                    "type": "iso8601 utc date (yyyy-mm-dd't'hh:mm'z')",
+                    "column_description": "The date the immunization was administered.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "patient",
+                    "type": "uuid",
+                    "column_description": "Foreign key to the Patient.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "encounter",
+                    "type": "uuid",
+                    "column_description": "Foreign key to the Encounter where the immunization was administered.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "code",
+                    "type": "string",
+                    "column_description": "Immunization code from CVX.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "description",
+                    "type": "string",
+                    "column_description": "Description of the immunization.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "cost",
+                    "type": "numeric",
+                    "column_description": "The line item cost of the immunization.",
+                    "is_pk": "No"
+                }
+            ]
+        },
+        "target_schema": {
+            "name": "DRUG_EXPOSURE",
+            "description": "This table captures records about the exposure to a Drug ingested or otherwise introduced into the body. A Drug is a biochemical substance formulated in such a way that when administered to a Person it will exert a certain biochemical effect on the metabolism. Drugs include prescription and over-the-counter medicines, vaccines, and large-molecule biologic therapies. Radiological devices ingested or applied locally do not count as Drugs.",
+            "columns": [
+                {
+                    "name": "drug_exposure_id",
+                    "type": "bigint",
+                    "column_description": "The unique key given to records of drug dispensings or administrations for a person. Refer to the ETL for how duplicate drugs during the same visit were handled.",
+                    "is_pk": "YES"
+                },
+                {
+                    "name": "person_id",
+                    "type": "bigint",
+                    "column_description": "The PERSON_ID of the PERSON for whom the drug dispensing or administration is recorded. This may be a system generated code.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "drug_concept_id",
+                    "type": "integer",
+                    "column_description": "The DRUG_CONCEPT_ID field is recommended for primary use in analyses, and must be used for network studies. This is the standard concept mapped from the source concept id which represents a drug product or molecule otherwise introduced to the body. The drug concepts can have a varying degree of information about drug strength and dose. This information is relevant in the context of quantity and administration information in the subsequent fields plus strength information from the DRUG_STRENGTH table, provided as part of the standard vocabulary download.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "drug_exposure_start_date",
+                    "type": "date",
+                    "column_description": "Use this date to determine the start date of the drug record.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "drug_exposure_start_datetime",
+                    "type": "datetime",
+                    "column_description": "",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "drug_exposure_end_date",
+                    "type": "date",
+                    "column_description": "The DRUG_EXPOSURE_END_DATE denotes the day the drug exposure ended for the patient.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "drug_exposure_end_datetime",
+                    "type": "datetime",
+                    "column_description": "",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "verbatim_end_date",
+                    "type": "date",
+                    "column_description": "This is the end date of the drug exposure as it appears in the source data, if it is given",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "drug_type_concept_id",
+                    "type": "integer",
+                    "column_description": "You can use the TYPE_CONCEPT_ID to delineate between prescriptions written vs.\u00a0prescriptions dispensed vs.\u00a0medication history vs.\u00a0patient-reported exposure, etc.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "stop_reason",
+                    "type": "varchar(20)",
+                    "column_description": "The reason a person stopped a medication as it is represented in the source. Reasons include regimen completed, changed, removed, etc. This field will be retired in v6.0.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "refills",
+                    "type": "integer",
+                    "column_description": "This is only filled in when the record is coming from a prescription written this field is meant to represent intended refills at time of the prescription.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "quantity",
+                    "type": "float",
+                    "column_description": "",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "days_supply",
+                    "type": "integer",
+                    "column_description": "",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "sig",
+                    "type": "varchar(max)",
+                    "column_description": "This is the verbatim instruction for the drug as written by the provider.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "route_concept_id",
+                    "type": "integer",
+                    "column_description": "",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "lot_number",
+                    "type": "varchar(50)",
+                    "column_description": "",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "provider_id",
+                    "type": "bigint",
+                    "column_description": "The Provider associated with drug record, e.g.\u00a0the provider who wrote the prescription or the provider who administered the drug.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "visit_occurrence_id",
+                    "type": "bigint",
+                    "column_description": "The Visit during which the drug was prescribed, administered or dispensed.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "visit_detail_id",
+                    "type": "bigint",
+                    "column_description": "The VISIT_DETAIL record during which the drug exposure occurred. For example, if the person was in the ICU at the time of the drug administration the VISIT_OCCURRENCE record would reflect the overall hospital stay and the VISIT_DETAIL record would reflect the ICU stay during the hospital visit.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "drug_source_value",
+                    "type": "varchar(50)",
+                    "column_description": "This field houses the verbatim value from the source data representing the drug exposure that occurred. For example, this could be an NDC or Gemscript code.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "drug_source_concept_id",
+                    "type": "integer",
+                    "column_description": "This is the concept representing the drug source value and may not necessarily be standard. This field is discouraged from use in analysis because it is not required to contain Standard Concepts that are used across the OHDSI community, and should only be used when Standard Concepts do not adequately represent the source detail for the Drug necessary for a given analytic use case. Consider using DRUG_CONCEPT_ID instead to enable standardized analytics that can be consistent across the network.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "route_source_value",
+                    "type": "varchar(50)",
+                    "column_description": "This field houses the verbatim value from the source data representing the drug route.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "dose_unit_source_value",
+                    "type": "varchar(50)",
+                    "column_description": "This field houses the verbatim value from the source data representing the dose unit of the drug given.",
+                    "is_pk": "NO"
+                }
+            ]
+        }
+    },
+    {
+        "id": "synthea:MEDICATIONS|omop:DRUG_EXPOSURE",
+        "gold_mapping": [
+            [
+                "patient",
+                "person_id"
+            ],
+            [
+                "code",
+                "drug_concept_id"
+            ],
+            [
+                "code",
+                "drug_source_value"
+            ],
+            [
+                "code",
+                "drug_source_concept_id"
+            ],
+            [
+                "start",
+                "drug_exposure_start_date"
+            ],
+            [
+                "start",
+                "drug_exposure_start_datetime"
+            ],
+            [
+                "start",
+                "drug_exposure_end_date"
+            ],
+            [
+                "start",
+                "drug_exposure_end_datetime"
+            ],
+            [
+                "start",
+                "days_supply"
+            ],
+            [
+                "stop",
+                "drug_exposure_end_date"
+            ],
+            [
+                "stop",
+                "drug_exposure_end_datetime"
+            ],
+            [
+                "stop",
+                "verbatim_end_date"
+            ],
+            [
+                "stop",
+                "days_supply"
+            ],
+            [
+                "encounter",
+                "visit_occurrence_id"
+            ]
+        ],
+        "source_schema": {
+            "name": "MEDICATIONS",
+            "description": "Patient medication data.",
+            "columns": [
+                {
+                    "name": "start",
+                    "type": "iso8601 utc date (yyyy-mm-dd't'hh:mm'z')",
+                    "column_description": "The date and time the medication was prescribed.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "stop",
+                    "type": "iso8601 utc date (yyyy-mm-dd't'hh:mm'z')",
+                    "column_description": "The date and time the prescription ended, if applicable.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "patient",
+                    "type": "uuid",
+                    "column_description": "Foreign key to the Patient.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "payer",
+                    "type": "uuid",
+                    "column_description": "Foreign key to the Payer.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "encounter",
+                    "type": "uuid",
+                    "column_description": "Foreign key to the Encounter where the medication was prescribed.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "code",
+                    "type": "string",
+                    "column_description": "Medication code from RxNorm.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "description",
+                    "type": "string",
+                    "column_description": "Description of the medication.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "base_cost",
+                    "type": "numeric",
+                    "column_description": "The line item cost of the medication.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "payer_coverage",
+                    "type": "numeric",
+                    "column_description": "The amount covered or reimbursed by the Payer.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "dispenses",
+                    "type": "numeric",
+                    "column_description": "The number of times the prescription was filled.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "totalcost",
+                    "type": "numeric",
+                    "column_description": "The total cost of the prescription, including all dispenses.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "reasoncode",
+                    "type": "string",
+                    "column_description": "Diagnosis code from SNOMED-CT specifying why this medication was prescribed.",
+                    "is_pk": "No"
+                },
+                {
+                    "name": "reasondescription",
+                    "type": "string",
+                    "column_description": "Description of the reason code.",
+                    "is_pk": "No"
+                }
+            ]
+        },
+        "target_schema": {
+            "name": "DRUG_EXPOSURE",
+            "description": "This table captures records about the exposure to a Drug ingested or otherwise introduced into the body. A Drug is a biochemical substance formulated in such a way that when administered to a Person it will exert a certain biochemical effect on the metabolism. Drugs include prescription and over-the-counter medicines, vaccines, and large-molecule biologic therapies. Radiological devices ingested or applied locally do not count as Drugs.",
+            "columns": [
+                {
+                    "name": "drug_exposure_id",
+                    "type": "bigint",
+                    "column_description": "The unique key given to records of drug dispensings or administrations for a person. Refer to the ETL for how duplicate drugs during the same visit were handled.",
+                    "is_pk": "YES"
+                },
+                {
+                    "name": "person_id",
+                    "type": "bigint",
+                    "column_description": "The PERSON_ID of the PERSON for whom the drug dispensing or administration is recorded. This may be a system generated code.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "drug_concept_id",
+                    "type": "integer",
+                    "column_description": "The DRUG_CONCEPT_ID field is recommended for primary use in analyses, and must be used for network studies. This is the standard concept mapped from the source concept id which represents a drug product or molecule otherwise introduced to the body. The drug concepts can have a varying degree of information about drug strength and dose. This information is relevant in the context of quantity and administration information in the subsequent fields plus strength information from the DRUG_STRENGTH table, provided as part of the standard vocabulary download.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "drug_exposure_start_date",
+                    "type": "date",
+                    "column_description": "Use this date to determine the start date of the drug record.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "drug_exposure_start_datetime",
+                    "type": "datetime",
+                    "column_description": "",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "drug_exposure_end_date",
+                    "type": "date",
+                    "column_description": "The DRUG_EXPOSURE_END_DATE denotes the day the drug exposure ended for the patient.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "drug_exposure_end_datetime",
+                    "type": "datetime",
+                    "column_description": "",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "verbatim_end_date",
+                    "type": "date",
+                    "column_description": "This is the end date of the drug exposure as it appears in the source data, if it is given",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "drug_type_concept_id",
+                    "type": "integer",
+                    "column_description": "You can use the TYPE_CONCEPT_ID to delineate between prescriptions written vs.\u00a0prescriptions dispensed vs.\u00a0medication history vs.\u00a0patient-reported exposure, etc.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "stop_reason",
+                    "type": "varchar(20)",
+                    "column_description": "The reason a person stopped a medication as it is represented in the source. Reasons include regimen completed, changed, removed, etc. This field will be retired in v6.0.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "refills",
+                    "type": "integer",
+                    "column_description": "This is only filled in when the record is coming from a prescription written this field is meant to represent intended refills at time of the prescription.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "quantity",
+                    "type": "float",
+                    "column_description": "",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "days_supply",
+                    "type": "integer",
+                    "column_description": "",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "sig",
+                    "type": "varchar(max)",
+                    "column_description": "This is the verbatim instruction for the drug as written by the provider.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "route_concept_id",
+                    "type": "integer",
+                    "column_description": "",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "lot_number",
+                    "type": "varchar(50)",
+                    "column_description": "",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "provider_id",
+                    "type": "bigint",
+                    "column_description": "The Provider associated with drug record, e.g.\u00a0the provider who wrote the prescription or the provider who administered the drug.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "visit_occurrence_id",
+                    "type": "bigint",
+                    "column_description": "The Visit during which the drug was prescribed, administered or dispensed.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "visit_detail_id",
+                    "type": "bigint",
+                    "column_description": "The VISIT_DETAIL record during which the drug exposure occurred. For example, if the person was in the ICU at the time of the drug administration the VISIT_OCCURRENCE record would reflect the overall hospital stay and the VISIT_DETAIL record would reflect the ICU stay during the hospital visit.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "drug_source_value",
+                    "type": "varchar(50)",
+                    "column_description": "This field houses the verbatim value from the source data representing the drug exposure that occurred. For example, this could be an NDC or Gemscript code.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "drug_source_concept_id",
+                    "type": "integer",
+                    "column_description": "This is the concept representing the drug source value and may not necessarily be standard. This field is discouraged from use in analysis because it is not required to contain Standard Concepts that are used across the OHDSI community, and should only be used when Standard Concepts do not adequately represent the source detail for the Drug necessary for a given analytic use case. Consider using DRUG_CONCEPT_ID instead to enable standardized analytics that can be consistent across the network.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "route_source_value",
+                    "type": "varchar(50)",
+                    "column_description": "This field houses the verbatim value from the source data representing the drug route.",
+                    "is_pk": "NO"
+                },
+                {
+                    "name": "dose_unit_source_value",
+                    "type": "varchar(50)",
+                    "column_description": "This field houses the verbatim value from the source data representing the dose unit of the drug given.",
+                    "is_pk": "NO"
+                }
+            ]
+        }
+    }
+]
